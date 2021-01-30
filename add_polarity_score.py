@@ -240,81 +240,75 @@ def f(row):
     else:
         return "NA"
 
-protest_data = pd.read_csv("protest-all-story-urls-20210117023531.csv")
+protest_data = pd.read_csv("./csvs/protest-all-story-urls-20210117023531.csv")
 protest_data["polarity"] = protest_data.apply(f, axis=1)
 
-riot_data = pd.read_csv("riot-all-story-urls-20210112170353.csv")
+riot_data = pd.read_csv("./csvs/riot-all-story-urls-20210112170353.csv")
 riot_data["polarity"] = riot_data.apply(f, axis=1)
 
-looting_data = pd.read_csv("looting-all-story-urls-20210117022027.csv")
+looting_data = pd.read_csv("./csvs/looting-all-story-urls-20210117022027.csv")
 looting_data["polarity"] = looting_data.apply(f, axis=1)
 
-mob_data = pd.read_csv("mob-all-story-urls-20210117021905.csv")
+mob_data = pd.read_csv("./csvs/mob-all-story-urls-20210117021905.csv")
 mob_data["polarity"] = mob_data.apply(f, axis=1)
 
-unrest_data = pd.read_csv("unrest-all-story-urls-20210119031600.csv")
+unrest_data = pd.read_csv("./csvs/unrest-all-story-urls-20210119031600.csv")
 unrest_data["polarity"] = unrest_data.apply(f, axis=1)
 
-floyd_data = pd.read_csv("floyd-all-story-urls-20210119045459.csv")
+floyd_data = pd.read_csv("./csvs/floyd-all-story-urls-20210119045459.csv")
 floyd_data["polarity"] = floyd_data.apply(f, axis=1)
 
-dc_data = pd.read_csv("capitol-hill-all-story-urls-20210119055556.csv")
+dc_data = pd.read_csv("./csvs/capitol-hill-all-story-urls-20210119055556.csv")
 dc_data["polarity"] = dc_data.apply(f, axis=1)
 
-capitol_riot = pd.read_csv("capitol-and-riot-all-story-urls-20210119224550.csv")
+capitol_riot = pd.read_csv("./csvs/capitol-and-riot-all-story-urls-20210119224550.csv")
 capitol_riot["polarity"] = capitol_riot.apply(f, axis=1)
 
-capitol_protest = pd.read_csv("capitol-and-protest-all-story-urls-20210119224852.csv")
+capitol_protest = pd.read_csv("./csvs/capitol-and-protest-all-story-urls-20210119224852.csv")
 capitol_protest["polarity"] = capitol_riot.apply(f, axis=1)
 
-blm_data = pd.read_csv("blm-all-story-urls-20210117023329.csv")
+blm_data = pd.read_csv("./csvs/blm-all-story-urls-20210117023329.csv")
 blm_data["polarity"] = blm_data.apply(f, axis=1)
 
-insurrection_data = pd.read_csv("blm-all-story-urls-20210117023329.csv")
+insurrection_data = pd.read_csv("./csvs/insurrection-all-story-urls-20210121061737.csv")
 insurrection_data["polarity"] = insurrection_data.apply(f, axis=1)
 
-police_data = pd.read_csv("police-all-story-urls-20210121061536.csv")
+police_data = pd.read_csv("./csvs/police-all-story-urls-20210121061536.csv")
 police_data["polarity"] = police_data.apply(f, axis=1)
 
-pb_data = pd.read_csv("proud-boys-all-story-urls-20210123001646.csv")
+pb_data = pd.read_csv("./csvs/proud-boys-all-story-urls-20210123001646.csv")
 pb_data["polarity"] = pb_data.apply(f, axis=1)
 
-antifa_data = pd.read_csv("antifa-all-story-urls-20210123001624.csv")
+antifa_data = pd.read_csv("./csvs/antifa-all-story-urls-20210123001624.csv")
 antifa_data["polarity"] = antifa_data.apply(f, axis=1)
 
-yemen_data = pd.read_csv("yemen-all-story-urls-20210128185003.csv")
+yemen_data = pd.read_csv("./csvs/yemen-all-story-urls-20210128185003.csv")
 yemen_data["polarity"] = yemen_data.apply(f, axis=1)
 
-syria_data = pd.read_csv("syria-all-story-urls-20210128185433.csv")
+syria_data = pd.read_csv("./csvs/syria-all-story-urls-20210128185433.csv")
 syria_data["polarity"] = syria_data.apply(f, axis=1)
 
-print(protest_data)
+racism_data = pd.read_csv("./csvs/racism-all-story-urls-20210129211326.csv")
+racism_data["polarity"] = racism_data.apply(f, axis=1)
 
-#for index, row in protest_data.iterrows():
-#    media_name = row['media_name'].strip()
-#    try:
-#        print(media_name)
-#        print(media_polarity[row['media_name']])
-#    except:
-#        pass
 
-protest_data.to_csv("protest_2020.csv")
-riot_data.to_csv("riot_2020.csv")
-looting_data.to_csv("looting_2020.csv")
-mob_data.to_csv("mob_2020.csv")
-unrest_data.to_csv("unrest_2020.csv")
-floyd_data.to_csv("floyd_2020.csv")
-dc_data.to_csv("dc_2020.csv")
-blm_data.to_csv("blm_2020.csv")
-capitol_riot.to_csv("capitol_riot_2020.csv")
-capitol_protest.to_csv("capitol_protest_2020.csv")
-insurrection_data.to_csv("insurrection_2020.csv")
-police_data.to_csv("police_2020.csv")
-pb_data.to_csv("pb_2020.csv")
-antifa_data.to_csv("antifa_2020.csv")
-yemen_data.to_csv("yemen_2020.csv")
-syria_data.to_csv("syria_2020.csv")
-
+protest_data.to_csv("./csvs/protest_2020.csv")
+riot_data.to_csv("./csvs/riot_2020.csv")
+looting_data.to_csv("./csvs/looting_2020.csv")
+mob_data.to_csv("./csvs/mob_2020.csv")
+unrest_data.to_csv("./csvs/unrest_2020.csv")
+floyd_data.to_csv("./csvs/floyd_2020.csv")
+dc_data.to_csv("./csvs/dc_2020.csv")
+blm_data.to_csv("./csvs/blm_2020.csv")
+capitol_riot.to_csv("./csvs/capitol_riot_2020.csv")
+capitol_protest.to_csv("./csvs/capitol_protest_2020.csv")
+insurrection_data.to_csv("./csvs/insurrection_2020.csv")
+police_data.to_csv("./csvs/police_2020.csv")
+pb_data.to_csv("./csvs/pb_2020.csv")
+antifa_data.to_csv("./csvs/antifa_2020.csv")
+yemen_data.to_csv("./csvs/yemen_2020.csv")
+syria_data.to_csv("./csvs/syria_2020.csv")
+racism_data.to_csv("./csvs/racism_2020.csv")
 
 
 
