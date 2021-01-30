@@ -57,7 +57,7 @@
     complete_stopwords  = c(complete_stopwords, redundant_words)
     complete_stopwords = c(complete_stopwords, "fox", "george", "floyd", "cnn", "cnnpolitics", "say", "man", "know", "trumps")
     # Generate wordcloud removing all stop words
-    png(sprintf("%s_stopwords_wordcloud.png", data_name))
+    png(sprintf("./images/%s_stopwords_wordcloud.png", data_name))
     words = tm_map(words, removeWords, complete_stopwords)
     wordcloud(words, max.words = 40, min.freq=5, random.order=FALSE, colors=brewer.pal(8,"Dark2"))
     
@@ -79,7 +79,7 @@
     p = p + theme(axis.text=element_text(size=16,face="bold"), axis.title=element_text(size=13), axis.title.x=element_blank())
     p = p + theme(plot.title = element_text(size=18,face="bold"))
     p = p + ylab("Number of Headlines") 
-    ggsave(filename = sprintf("./%s_top.png", data_name) , plot=p, width=4.5, height=6)
+    ggsave(filename = sprintf("./images/%s_top.png", data_name) , plot=p, width=4.5, height=6)
   }
   
   polarity_histogram_plotter = function(data, data_name) {
@@ -95,31 +95,29 @@
     p = p + ylab("Number of Articles") 
     #p = p + xlab("news polarity") 
     p = p + scale_x_discrete(labels = xnames)
-    ggsave(filename = sprintf("./%s_histogram.png", data_name) , plot=p, width=8, height=6)
+    ggsave(filename = sprintf("./images/%s_histogram.png", data_name) , plot=p, width=8, height=6)
   }
   # write nice histogram function
   
   
-   
-  
   setwd("/Users/mtauberg/projects/protests/")
-  riot = read.csv("riot_2020.csv")
-  protests = read.csv("protest_2020.csv")
-  looting = read.csv("looting_2020.csv")
-  mob = read.csv("mob_2020.csv")
-  unrest = read.csv("unrest_2020.csv")
-  floyd = read.csv("floyd_2020.csv")
-  dc = read.csv("dc_2020.csv")
-  capitol_riot = read.csv("capitol_riot_2020.csv")
-  capitol_protest = read.csv("capitol_protest_2020.csv")
-  blm = read.csv("blm_2020.csv")
-  insurrection = read.csv("insurrection_2020.csv")
-  police = read.csv("police_2020.csv")
-  pb = read.csv("pb_2020.csv")
-  antifa = read.csv("antifa_2020.csv")
-  yemen = read.csv("yemen_2020.csv")
-  syria = read.csv("syria_2020.csv")
-  # add racism?
+  riot = read.csv("./csvs/riot_2020.csv")
+  protests = read.csv("./csvs/protest_2020.csv")
+  looting = read.csv("./csvs/looting_2020.csv")
+  mob = read.csv("./csvs/mob_2020.csv")
+  unrest = read.csv("./csvs/unrest_2020.csv")
+  floyd = read.csv("./csvs/floyd_2020.csv")
+  dc = read.csv("./csvs/dc_2020.csv")
+  capitol_riot = read.csv("./csvs/capitol_riot_2020.csv")
+  capitol_protest = read.csv("./csvs/capitol_protest_2020.csv")
+  blm = read.csv("./csvs/blm_2020.csv")
+  insurrection = read.csv("./csvs/insurrection_2020.csv")
+  police = read.csv("./csvs/police_2020.csv")
+  pb = read.csv("./csvs/pb_2020.csv")
+  antifa = read.csv("./csvs/antifa_2020.csv")
+  yemen = read.csv("./csvs/yemen_2020.csv")
+  syria = read.csv("./csvs/syria_2020.csv")
+  racism = read.csv("./csvs/racism_2020.csv")
   
   # use lower case titles for easy grepping
   riot$title = tolower(riot$title)
@@ -220,6 +218,7 @@
   polarity_histogram_plotter(mob, "Mob")
   polarity_histogram_plotter(yemen, "Yemen")
   polarity_histogram_plotter(syria, "Syria")
+  polarity_histogram_plotter(racism, "Racism")
   
   # TOP OUTLETS PER TOPIC
   floyd_media = as.data.frame(table(floyd$media_name))
